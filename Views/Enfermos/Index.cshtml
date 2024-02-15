@@ -1,0 +1,33 @@
+﻿@model List<Enfermo>
+
+<h1>Enfermos LINQ to SQL</h1>
+
+<p>
+    <a asp-controller="Empleados" asp-action="BuscadorEmpleados">
+        Buscador Empleados
+    </a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Inscripcion</th>
+            <th>Apellido</th>
+            <th>Sexo</th>
+            <th>Detalles</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Enfermo enf in Model)
+        {
+            <tr>
+                <td>@enf.Inscripcion</td>
+                <td>@enf.Apellido</td>
+                <td>@enf.Sexo</td>
+                <td><a class="btn btn-primary btn-sm" asp-controller="Enfermos" asp-action="Details" asp-route-inscripcion="@enf.Inscripcion">Detalles</a></td>
+                <td><a class="btn btn-primary btn-sm" asp-controller="Enfermos" asp-action="Delete" asp-route-inscripcion="@enf.Inscripcion">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

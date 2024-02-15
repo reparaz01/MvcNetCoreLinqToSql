@@ -1,0 +1,28 @@
+﻿@model Empleado
+
+<h1> Details</h1>
+
+<p> 
+    <a asp-controller="Empleados" asp-action="Index">
+        Volver
+    </a>
+
+
+</p>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        Apellido: @Model.Apellido
+    </li>
+    <li class="list-group-item">
+        Oficio: @Model.Oficio
+    </li>
+
+    <li class="list-group-item">
+        Oficio: @Model.Salario
+    </li>
+
+    <li class="list-group-item">
+        Departamento: @Model.IdDepartamento
+    </li>
+</ul>

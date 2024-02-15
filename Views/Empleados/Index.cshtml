@@ -1,0 +1,21 @@
+﻿@model List<Empleado>
+
+<h1>Empleados linq to SQL</h1>
+
+
+<p>
+    <a asp-controller="Empleados" asp-action="BuscadorEmpleados">
+        Volver
+    </a>
+</p>
+
+<ul class="list-group">
+
+    @foreach (Empleado emp in Model)
+    {
+        <li class="list-group-item">
+            @emp.Apellido - @emp.Oficio -
+            <a asp-controller="Empleados" asp-action="Details" asp-route-id="@emp.IdEmpleado">Details</a>
+        </li>
+    }
+</ul>
